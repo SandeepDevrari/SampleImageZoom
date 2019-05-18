@@ -1,0 +1,33 @@
+apply plugin: 'com.android.application'
+
+android {
+    compileSdkVersion rootProject.ext.compile
+    defaultConfig {
+        applicationId "devrari.sandeep.zoomimagesample"
+        minSdkVersion rootProject.ext.mini
+        targetSdkVersion rootProject.ext.target
+        versionCode rootProject.ext.versionCode
+        versionName rootProject.ext.versionName
+        android.defaultConfig.vectorDrawables.useSupportLibrary = true
+        testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+    implementation "androidx.appcompat:appcompat:$rootProject.appcompat"
+    implementation "androidx.constraintlayout:constraintlayout:$rootProject.constraint"
+    implementation "com.google.dagger:dagger-android:$rootProject.dagger"
+    implementation "com.google.dagger:dagger-android-support:$rootProject.dagger"
+    annotationProcessor "com.google.dagger:dagger-android-processor:$rootProject.dagger"
+    annotationProcessor "com.google.dagger:dagger-compiler:$rootProject.dagger"
+    testImplementation 'junit:junit:4.12'
+    androidTestImplementation 'androidx.test:runner:1.1.0-alpha4'
+    androidTestImplementation 'androidx.test.espresso:espresso-core:3.1.0-alpha4'
+}

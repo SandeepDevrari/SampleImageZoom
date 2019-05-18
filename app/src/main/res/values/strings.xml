@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">ZoomImageSample</string>
+    <string name="label_welcome">Welcome</string>
+</resources>
